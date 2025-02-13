@@ -13,13 +13,13 @@ object ProviderManager {
     private val ARGUMENT_TYPE_PROVIDERS = HashMap<String, ArgumentTypeProvider>()
     private val COMMAND_PROVIDERS = HashMap<String, CommandBuilderProvider>()
 
-    val LITERAL_TYPE = "l"
-    val BLOCKPOS_TYPE = "bp"
+    const val LITERAL_TYPE = "l"
+    const val BLOCKPOS_TYPE = "bp"
 
     init {
         COMMAND_PROVIDERS[LITERAL_TYPE] = { args ->
             Commands.literal(args[0] as String)
         }
-        ARGUMENT_TYPE_PROVIDERS[BLOCKPOS_TYPE] = { args -> BlockPosArgument.blockPos() }
+        ARGUMENT_TYPE_PROVIDERS[BLOCKPOS_TYPE] = { BlockPosArgument.blockPos() }
     }
 }

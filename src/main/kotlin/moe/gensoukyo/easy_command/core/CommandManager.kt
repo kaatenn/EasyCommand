@@ -7,7 +7,7 @@ object CommandManager {
 
     fun fromJson(json: JsonObject){
         for ((key, value) in json.entrySet()) {
-            commands.put(key, value.asString)
+            commands[key] = value.asString
         }
     }
 }
